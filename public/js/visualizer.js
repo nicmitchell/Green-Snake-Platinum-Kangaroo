@@ -1,3 +1,15 @@
+var Visualizer = function(){
+  this.appName = 'Green Snake Platinum Kangaroo';
+  this.controls = {};
+  this.camera = {};
+  this.scene = {};
+  this.render = function(){};
+  this.renderer = {};
+  this.orbitControls = {};
+  this.cubes = [];
+  this.init = function(){};
+};
+
 // Dimension Settings set the scene size
 var width = window.innerWidth;
 var height = window.innerHeight;
@@ -15,36 +27,41 @@ var $container = $('#container');
 var renderer = new THREE.WebGLRenderer({alpha:true});
 var camera = new THREE.PerspectiveCamera(view_angle, aspect, near, far);
 var scene = new THREE.Scene();
+var controls;
 renderer.domElement.id = "container";
 
-// initialize
-var cubes = [];
-var controls;
 
-// setup the grid with 8 rows with 16 columns cubes
-var row = 0;
-for(var x = -16; x < 48; x += 2) {
+var makeCubes = function(){
+  // initialize
+  var cubes = [];
+
+  // setup the grid with 8 rows with 16 columns cubes
+  var row = 0;
   var col = 0;
   cubes[row] = [];
-  for(var y = 8; y < 24; y += 2) {
-    var geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
-    var material = new THREE.MeshLambertMaterial({
-      ambient: 0x808080,
-      specular: 0x999999,
-      shininess: 100,
-      opacity:0.8,
-      transparent: true
-    });
-		cubes[row][col] = new THREE.Mesh(geometry, material);
-		cubes[row][col].position.x = x;
-    cubes[row][col].position.y = y;
-    cubes[row][col].position.z = 0;
-    cubes[row][col].material.color.setHSL(0.0,0.8,0.8);
-		scene.add(cubes[row][col]);
-		col++;
-	}
-	row++;
-}
+
+  for(var x = -16; x < 48; x += 2) {
+    for(var y = 8; y < 24; y += 2) {
+      var geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+      var material = new THREE.MeshLambertMaterial({
+        ambient: 0x808080,
+        specular: 0x999999,
+        shininess: 100,
+        opacity:0.8,
+        transparent: true
+      });
+  		cubes[row][col] = new THREE.Mesh(geometry, material);
+  		cubes[row][col].position.x = x;
+      cubes[row][col].position.y = y;
+      cubes[row][col].position.z = 0;
+      cubes[row][col].material.color.setHSL(0.0,0.8,0.8);
+  		scene.add(cubes[row][col]);
+  		col++;
+  	}
+  	row++;
+  }
+  return cubes;
+};
 
 // create lighting
 var light = new THREE.AmbientLight(0x505050);
