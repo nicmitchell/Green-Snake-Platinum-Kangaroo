@@ -88,8 +88,6 @@ var updateCubes = function(){
 
   zeros = zeros.reduce(function(a, b){ return a + b; });
 
-  if()
-
   // don't do anything to the cubes if the dataArray is empty
   if(typeof dataArray === 'object' && dataArray.length > 0 && zeros > 0) {
     var z = 0;
