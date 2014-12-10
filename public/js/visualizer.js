@@ -23,7 +23,7 @@ var controls;
 
 // setup the grid with 8 rows with 16 columns cubes
 var row = 0;
-for(var x = 0; x < 32; x += 2) {
+for(var x = -16; x < 48; x += 2) {
   var col = 0;
   cubes[row] = [];
   for(var y = 8; y < 24; y += 2) {
@@ -85,13 +85,16 @@ var updateCubes = function(){
 
   // check if the dataArray (audio buffer) is empty
   var zeros = Array.prototype.slice.call(dataArray);
+
   zeros = zeros.reduce(function(a, b){ return a + b; });
+
+  if()
 
   // don't do anything to the cubes if the dataArray is empty
   if(typeof dataArray === 'object' && dataArray.length > 0 && zeros > 0) {
     var z = 0;
     var offset = 1;
-    for(var row = 8, rowLength = cubes.length; row < rowLength; row++) {
+    for(var row = 16, rowLength = cubes.length; row < rowLength; row++) {
       for(var col = 0, colLength = cubes[row].length; col < colLength; col++) {
         var scale = (dataArray[z] / 10 < 1) ? 1 : dataArray[z] / 10;
         var data = dataArray[z] / 255;
@@ -115,9 +118,6 @@ var updateCubes = function(){
 
 // Updates the visualizer
 var render = function () {
-  
-	
-
   updateCubes();
   controls.update();
   renderer.render(scene, camera);
