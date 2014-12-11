@@ -28,3 +28,8 @@ $("#load").click(function(){
 
 });
 // end
+window.onload = function() {
+  var visualizer = new Visualizer();
+  debugger;
+  visualizer.init();
+};
