@@ -6,7 +6,7 @@ var Visualizer = function(){
   this.camera = {};
   // this.render = function(){};
   this.orbitControls = {};
-  this.cubes = [];
+  // this.cubes = [];
   this.init = function(){
     // get dimensions of window
     var width = window.innerWidth;
@@ -98,6 +98,7 @@ Visualizer.prototype = {
       }
       row++;
     }
+    console.log(cubes);
     return cubes;
   },
   createLighting: function(){
