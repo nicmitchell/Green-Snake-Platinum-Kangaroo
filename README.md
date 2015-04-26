@@ -27,4 +27,4 @@ node app.js
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ## Screenshot
-
+[Screenshot](http://g.recordit.co/pZ9bbxVJ5v.gif
