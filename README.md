@@ -2,7 +2,7 @@
 
 Built using Web Audio API and WebGL (Three.js)
 
-For demo, please visit: [http://green-snake-platinum-kangaroo.herokuapp.com/]http://green-snake-platinum-kangaroo.herokuapp.com/)
+For demo, please visit: [http://green-snake-platinum-kangaroo.herokuapp.com/](http://green-snake-platinum-kangaroo.herokuapp.com/)
 
 ## Team
 
