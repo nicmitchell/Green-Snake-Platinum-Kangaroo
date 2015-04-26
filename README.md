@@ -2,7 +2,7 @@
 
 Built using Web Audio API and WebGL (Three.js)
 
-For demo, please visit: [https://pacific-refuge-1175.herokuapp.com/](https://pacific-refuge-1175.herokuapp.com/)
+For demo, please visit: [http://green-snake-platinum-kangaroo.herokuapp.com/]http://green-snake-platinum-kangaroo.herokuapp.com/)
 
 ## Team
 
